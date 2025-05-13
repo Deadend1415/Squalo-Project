@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Squalo</title>
+    <!-- Gsap library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
 
-        .container {
-            text-align: center;
+      .container {
+        text-align: center;
+        animation-name: slide_right;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        opacity: 0;
+      }
+      @keyframes slide_right {
+        from {
+          transform: translate(1000px);
+          opacity: 0;
         }
-
-        img {
-            max-width: 45%;
-            height: auto;
+        to {
+          transform: translate(0px);
+          opacity: 1;
         }
+      }
+      @keyframes slide_left {
+        from {
+          transform: translate(-1000px);
+          opacity: 0;
+        }
+        to {
+          transform: translate(0px);
+          opacity: 1;
+        }
+      }
+      img {
+        max-width: 35%;
+        height: auto;
+      }
+      .title {
+        animation-name: slide_left;
+        animation-duration: 4s;
+        animation-delay: -2s;
+      }
     </style>
-</head>
-<body>
-    <h1>Squalo Affamato</h1>
+  </head>
+  <body>
+    <h1 class="title">Squalo Affamato</h1>
     <div class="container">
-        <span>
-            <img src="Squalo_n1.jpg" alt="Immagine di uno squalo">
-        </span>
+      <span>
+        <img src="Squalo_n1.jpg" alt="Immagine di uno squalo" />
+      </span>
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // gsap code here!
         alert("Squali pronti a mordere");
+      });
     </script>
-</body>
+  </body>
 </html>
