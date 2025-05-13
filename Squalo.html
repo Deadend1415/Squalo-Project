@@ -25,39 +25,12 @@
 
       .container {
         text-align: center;
-        animation-name: slide_right;
-        animation-duration: 2s;
-        animation-delay: 0.5s;
         opacity: 0;
       }
-      @keyframes slide_right {
-        from {
-          transform: translate(1000px);
-          opacity: 0;
-        }
-        to {
-          transform: translate(0px);
-          opacity: 1;
-        }
-      }
-      @keyframes slide_left {
-        from {
-          transform: translate(-1000px);
-          opacity: 0;
-        }
-        to {
-          transform: translate(0px);
-          opacity: 1;
-        }
-      }
+
       img {
         max-width: 35%;
         height: auto;
-      }
-      .title {
-        animation-name: slide_left;
-        animation-duration: 4s;
-        animation-delay: -2s;
       }
     </style>
   </head>
@@ -72,7 +45,15 @@
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         // gsap code here!
-        alert("Squali pronti a mordere");
+        // alert("Squali pronti a mordere");
+        // Title animation
+        gsap.fromTo(".title", { opacity: 0 }, { opacity: 1, duration: 3 });
+        // Images
+        gsap.fromTo(
+          ".container",
+          { opacity: 0, x: 500 },
+          { opacity: 1, x: 0, duration: 2 }
+        );
       });
     </script>
   </body>
