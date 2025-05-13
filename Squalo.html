@@ -43,34 +43,33 @@
       }
 
       .container {
-        text-align: center;
         opacity: 0;
       }
-
-      img {
-        max-width: 35%;
-        height: auto;
-      }
-
       button {
-        width: 15%;
+        width: 20%;
+      }
+      img {
+        width: 20rem;
       }
     </style>
   </head>
   <body>
     <div class="super_container d-flex flex-column align-items-center">
-      <h1 class="title mb-5">Squalo Affamato</h1>
-      <div class="container">
-        <span>
-          <img src="tralalero.webp" alt="Immagine di uno squalo" />
-        </span>
-      </div>
-      <button class="rounded-4 mt-5 border-0"><----</button>
+      <h1 class="title mb-5">SQUALI AFFAMATI 🦈</h1>
+      <img src="tralalero.webp" alt="Immagine di uno squalo" />
+      <button class="rounded-4 mt-5 border-0">...</button>
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
-        const newSrc = ["tralalero.webp", "Squalo_n1.jpg"];
-        let i = 0;
+        const newSrc = [
+          "tralalero.webp",
+          "Squalo2.jpg",
+          "Squalo3.jpg",
+          "Squalo_n1.jpg",
+          "Squalo_n1.jpg",
+          "Squalo_n1.jpg",
+        ];
+        let i = 1;
         // gsap code here!
         // alert("Squali pronti a mordere");
         // Title animation
@@ -85,10 +84,7 @@
         $("button").click(function () {
           $("img").attr("src", newSrc[i]);
           gsap.fromTo("img", { opacity: 0 }, { opacity: 1, duration: 3 });
-          i++;
-          if (i >= 2) {
-            i = 0;
-          }
+          i = (i + 1) % newSrc.length;
         });
       });
     </script>
