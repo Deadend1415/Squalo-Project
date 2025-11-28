@@ -1,2 +1,3 @@
 # Squalo-Project
-Il progetto dello squalo
+Il progetto sullo squalo
+![Example Image](Screenshot.png)
